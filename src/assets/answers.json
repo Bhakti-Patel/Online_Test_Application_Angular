@@ -1,0 +1,12 @@
+{
+    "answers":[
+        {"qid":1,"ans":"JavaScript Framework"},
+        {"qid":2,"ans":"Dependency Injection"},
+        {"qid":3,"ans":"Next Generation"},
+        {"qid":4,"ans":"{{2+2}}"},
+        {"qid":5,"ans":"Injectable"}
+        
+    ]
+
+    
+}

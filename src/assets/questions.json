@@ -1,0 +1,11 @@
+{
+    "questions":[
+        {"qid":1,"question":"Angular is a ?","a":"Java Framework","b":"JavaScript Framework","c":"HTML Framework","d":"SQL Framework"},
+        {"qid":2,"question":"What is the full form of di?","a":"Dependent Injection","b":"Dependency Injection","c":"Do Inject","d":"Done Injection"},
+        {"qid":3,"question":"What is the full form of ng?","a":"Next Generation","b":"Next Going","c":"No Generation","d":"Not Going"},
+        {"qid":4,"question":"Choose the valid Angular expression?","a":"{(2+2)}","b":"{2+2}","c":"{{2+2}}","d":"((2+2))"},
+        {"qid":5,"question":"Which decorator is used to make a class a service?","a":"Injectable","b":"Component","c":"Server","d":"Injector"}
+
+
+    ]
+}

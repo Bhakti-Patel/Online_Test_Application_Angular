@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script>
+    function validateForm(){
+
+    }
+   </script>
+</head>
+<body>
+   <div class="container-fluid" style="border:1px solid #ccc">
+    <h1 style="background-color:DodgerBlue;">Welcome to the Quiz Application</h1>
+    <br/>
+       <div class="card" style="width: 50rem;" class *ngIf="showQuestionsAnswers">
+       <div *ngFor="let q of questions">
+           <div>{{q.qid}} ) {{q.question}}</div>
+           <div data-toggle="buttons" class="answer-container">
+               <label class="radio-inline"></label><input  type="radio" name={{q.qid}} value={{q.a}} (click)="ansSelected(q.qid,q.a)" required/>{{q.a}}
+               <label class="radio-inline"></label><input  type="radio" name={{q.qid}} value={{q.b}} (click)="ansSelected(q.qid,q.b)" />{{q.b}}
+               <label class="radio-inline"></label><input  type="radio" name={{q.qid}} value={{q.c}} (click)="ansSelected(q.qid,q.c)"/>{{q.c}}
+               <label class="radio-inline"></label><input type="radio" name={{q.qid}} value={{q.d}} (click)="ansSelected(q.qid,q.d)"/>{{q.d}}
+               
+           </div>  
+           <br/>
+       </div>
+       
+       <br/>
+       <input type="submit" value="Submit Exam" (click)="submitExam()"/>
+       </div>
+      <div *ngIf="showRetakeReviewButtons">
+           <div><b>{{msg}}</b></div>
+           <br/>
+           <input type="button" value="ReTake Exam" (click)="retakeExam()"/>
+           <input type="button" value="Review Exam" (click)="reviewExam()"/>
+      </div>
+      <div  *ngIf="showReviewResults" >
+           <h2>Exam Review </h2>
+           <div class='parent' *ngFor="let q of questions;let i=index;">
+            {{q.qid}} ) {{q.question}}<br/>
+                        
+               <div class='child' [ngClass]="{'green': answers[i].ans == myAns[i].ans && q.a == myAns[i].ans, 'red': answers[i].ans != myAns[i].ans && q.a == myAns[i].ans}"><span> {{ q.a}}</span></div>
+               <div class='child' [ngClass]="{'green': answers[i].ans == myAns[i].ans && q.b == myAns[i].ans, 'red': answers[i].ans != myAns[i].ans && q.b == myAns[i].ans}"><span> {{q.b}}</span> </div>
+               <div class='child' [ngClass]="{'green': answers[i].ans == myAns[i].ans && q.c == myAns[i].ans, 'red': answers[i].ans != myAns[i].ans && q.c == myAns[i].ans}"><span>{{q.c}}</span></div>
+               <div class='child' [ngClass]="{'green': answers[i].ans == myAns[i].ans && q.d == myAns[i].ans, 'red': answers[i].ans != myAns[i].ans && q.d == myAns[i].ans}"><span> {{q.d}}</span></div>
+               <p ><b>Correct Answer is : {{answers[i].ans}}</b></p>
+           </div>
+           
+           <input type="button" value="ReTake Exam" (click)="retakeExam()"/>
+      </div>
+   </div>
+</body>
+</html>
+
+
+
+
